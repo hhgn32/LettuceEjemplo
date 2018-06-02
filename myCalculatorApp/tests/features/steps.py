@@ -61,11 +61,7 @@ def I_should_see(step, expected_result):
 def have_the_number(step, x):
     world.number=int(x)
 
-@step(u'When: I input (\d+) task_052')
-def i_input_add(step, x):
-    world.result = world.calc.task_052(world.number1)
-
 @step(u'Then: I should see (\d+)')
 def I_should_see(step, expected_result):
-    actual_result = world.result
+    actual_result = world.calc.task_052(wold.number)
     assert_equals(int(expected_result), actual_results)

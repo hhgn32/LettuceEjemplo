@@ -21,7 +21,6 @@ Feature: Compute add
     When: I input 1 minsinweeks
     Then: I should see 10080
 
-    Scenario: Calculate 2304811 / 47 module with out % calculator
+    Scenario: Calculate 2304811 / 47 module with out % calculator (short)
   	  Given: I have the week number 2304811
-      When: I input 2304811 task_052
       Then: I should see 25
