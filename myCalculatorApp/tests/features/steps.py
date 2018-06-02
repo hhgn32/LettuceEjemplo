@@ -1,7 +1,7 @@
 from lettuce import *
 from nose.tools import assert_equals
 from calculator import Calculator
- 
+
 @step(u'Given: I am using the calculator')
 def i_am_using_the_calculator(step):
     print ('Attempting to use calculator...')
@@ -20,7 +20,7 @@ def have_the_number(step, y):
 @step(u'When: I input (\d+) add (\d+)')
 def i_input_add(step, x, y):
     world.result = world.calc.add(world.number1 , world.number2)
- 
+
 @step(u'Then: I should see (\d+)')
 def I_should_see(step, expected_result):
     actual_result = world.result
@@ -32,7 +32,7 @@ def I_should_see(step, expected_result):
 @step(u'I input "([^"]*)" add "([^"]*)"')
 def given_i_input_group1_add_group1(step, x, y):
     world.result = world.calc.add(int(x), int(y))
- 
+
 @step(u'I should see "([^"]+)"')
 def result(step, expected_result):
     actual_result = world.result
@@ -55,4 +55,17 @@ def I_should_see(step, expected_result):
     assert_equals(int(expected_result), actual_result)
 
 
+#Scenario: Calculate 2304811 / 47 module with out % calculator
 
+@step('Given: I have the week number (\d+)')
+def have_the_number(step, x):
+    world.number=int(x)
+
+@step(u'When: I input (\d+) task_052')
+def i_input_add(step, x):
+    world.result = world.calc.task_052(world.number1)
+
+@step(u'Then: I should see (\d+)')
+def I_should_see(step, expected_result):
+    actual_result = world.result
+    assert_equals(int(expected_result), actual_results)
